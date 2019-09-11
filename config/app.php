@@ -168,7 +168,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Brian2694\Toastr\ToastrServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-       
+        Felixkiss\UniqueWithValidator\ServiceProvider::class,
         /*
          * Package Service Providers...
          */

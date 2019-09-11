@@ -40,11 +40,11 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Name</label>
-                      <input type="text" class="form-control" id="categoryname" name="categoryname" placeholder="Enter Category">
+                      <input type="text" class="form-control" id="categoryname" name="categoryname" placeholder="Enter Category" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Description</label>
-                        <input type="text" class="form-control" id="description" name="description" placeholder="Enter Description">
+                        <input type="text" class="form-control" id="description" name="description" placeholder="Enter Description" autocomplete="off">
                     </div>
                     
                   </div>

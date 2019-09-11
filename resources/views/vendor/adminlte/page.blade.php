@@ -4,6 +4,20 @@
     <link rel="stylesheet"
           href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
           <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+          <style>
+                .form-error {
+             
+             border: 1px solid #e74c3c;
+             border-radius: 5px;
+  
+             }
+             .form-valid {
+             
+             border: 1px solid #2bb90b;
+             border-radius: 5px;
+  
+             }
+                </style>
     @stack('css')
     @yield('css')
 @stop

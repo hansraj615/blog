@@ -26,8 +26,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(["prefix" => "admin", "namespace" => "Admin"], function () {
+    /********************Category Route*******************/
+
 Route::resource('/category','CategoryController');
 Route::POST('/category/store','CategoryController@store')->name('category.store');
 Route::POST('/category/{id}/update','CategoryController@update')->name('category.update');
 Route::POST('/category/{id}/destroy','CategoryController@destroy')->name('category.destroy');
+
+    /***********************Tag Route********************/
+
+Route::resource('/subcategory', 'SubCategoryController');   
+Route::POST('/subcategory/store','SubCategoryController@store')->name('subcategory.store'); 
+Route::POST('/subcategory/{id}/update','SubCategoryController@update')->name('subcategory.update');
+Route::POST('/subcategory/{id}/destroy','SubCategoryController@destroy')->name('subcategory.destroy');
 });

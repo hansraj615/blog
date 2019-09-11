@@ -139,11 +139,11 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Sub Category',
+            'url'         => 'admin/subcategory',
             'icon'        => 'far fa-file',
-            'label'       => 4,
             'label_color' => 'success',
+            'active'      =>'admin/subcategory/*'
         ],[
             'text'        => 'Category',
             'url'         => 'admin/category',
