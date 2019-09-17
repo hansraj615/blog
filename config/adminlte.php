@@ -143,13 +143,19 @@ return [
             'url'         => 'admin/subcategory',
             'icon'        => 'far fa-file',
             'label_color' => 'success',
-            'active'      =>'admin/subcategory/*'
+            'active'      =>['admin/subcategory', 'admin/subcategory/*'],
         ],[
             'text'        => 'Category',
             'url'         => 'admin/category',
             'icon'        => 'far fa-file',
             'label_color' => 'success',
-            'active'      =>'admin/category/*'
+            'active'      =>['admin/category','admin/category/*'],
+        ],[
+            'text'        => 'Album',
+            'url'         => 'admin/album',
+            'icon'        => 'far fa-file',
+            'label_color' => 'success',
+            'active'      =>['admin/album/','admin/album/*'],
         ],[
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -312,7 +318,7 @@ return [
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-center-radar.min.css',
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-loading-bar.min.css',
                 ],
                 [
                     'type' => 'js',

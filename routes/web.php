@@ -33,10 +33,19 @@ Route::POST('/category/store','CategoryController@store')->name('category.store'
 Route::POST('/category/{id}/update','CategoryController@update')->name('category.update');
 Route::POST('/category/{id}/destroy','CategoryController@destroy')->name('category.destroy');
 
-    /***********************Tag Route********************/
+    /***********************SubCategory Route********************/
 
 Route::resource('/subcategory', 'SubCategoryController');   
 Route::POST('/subcategory/store','SubCategoryController@store')->name('subcategory.store'); 
 Route::POST('/subcategory/{id}/update','SubCategoryController@update')->name('subcategory.update');
 Route::POST('/subcategory/{id}/destroy','SubCategoryController@destroy')->name('subcategory.destroy');
+
+/****************************Album******************************/
+
+
+Route::get('/album/getsubcategory','AlbumController@getSubCategory');
+Route::resource('/album', 'AlbumController'); 
+Route::POST('/album/store','AlbumController@store')->name('album.store'); 
+Route::POST('/album/{id}/update','AlbumController@update')->name('album.update');
+Route::POST('/album/{id}/destroy','AlbumController@destroy')->name('album.destroy');
 });
