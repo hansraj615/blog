@@ -23,7 +23,7 @@ class CreateGalleriesTable extends Migration
             $table->foreign('subcategory_id')->references('id')->on('sub_categories');
             $table->integer('album_id')->unsigned()->nullable();
             $table->foreign('album_id')->references('id')->on('albums');
-            $table->text('image')->default("image.png");
+            $table->string('image')->default("image.png");
             $table->tinyInteger('status')->default(1);
             $table->text('description');
             $table->timestamps();

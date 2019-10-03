@@ -94,9 +94,43 @@
       
     
 @endsection
-@push('scripts')
+@push('js')
  
- 
+<script>
+  $(document).ready(function () {
+$('#category').on('change', function() {
+  var category=$(this).val();
+  $.ajax({
+              type: "get",
+              url: "/admin/album/getsubcategory",
+              data:'category='+$(this).val(),
+              success: function(data){
+                if(data.error == true) {
+                  var subcategoryNone = "";
+                  toastr.error( data , "Category Dosen't have subcategory please create and subcaregory first" );
+                  subcategoryNone += "<option value=''>Plese Select Category First </option>";
+                  $("#subcategory").html(subcategoryNone).trigger('change.select2');
+                  }else{
+                    var subcategory = "";
+                  $.each(data, function(index, value) {
+                    subcategory += "<option value="+value.id+">"+value.name+" </option>";
+                  });
+                  $("#subcategory").html(subcategory).trigger('change.select2');
+                  }
+              }
+        
+          
+          });
+
+
+
+        
+});
+
+
+});
+
+</script>
  
  
 @endpush

@@ -169,6 +169,7 @@ return [
         Brian2694\Toastr\ToastrServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Felixkiss\UniqueWithValidator\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -233,7 +234,9 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
-        'Form' => Collective\Html\FormFacade::class
+        'Form' => Collective\Html\FormFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        
        
 
     ],

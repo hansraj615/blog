@@ -141,64 +141,57 @@ return [
         [
             'text'        => 'Sub Category',
             'url'         => 'admin/subcategory',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fa fa-image',
             'label_color' => 'success',
             'active'      =>['admin/subcategory', 'admin/subcategory/*'],
         ],[
             'text'        => 'Category',
             'url'         => 'admin/category',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fa fa-image',
             'label_color' => 'success',
             'active'      =>['admin/category','admin/category/*'],
         ],[
             'text'        => 'Album',
             'url'         => 'admin/album',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fa fa-image',
             'label_color' => 'success',
             'active'      =>['admin/album/','admin/album/*'],
         ],[
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'        => 'Gallery(Images)',
+            'url'         => 'admin/gallery',
+            'icon'        => 'fa fa-image',
+            'label_color' => 'success',
+            'active'      =>['admin/gallery/','admin/gallery/*'],
+        ],
+        ['header' => 'Portal Settings'],
+        [
+            'text' => 'About',
+            'url'  => 'admin/portal/about',
+            'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Manage Role',
+                    'url' => 'admin/portal/about',
+                    'icon' => 'fas fa-fw fa-user',
+                    'label_color' => 'success',
+                    'active' => ['admin/portal/about', 'admin/portal/about?*','admin/portal/about*']
                 ],
             ],
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Setting',
+            'url'  => 'admin/profile',
             'icon' => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Manage Role',
+                    'url' => 'admin/role',
+                    'icon' => 'fas fa-fw fa-user',
+                    'label_color' => 'success',
+                    'active' => ['admin/role', 'admin/role?*','admin/role*']
+                ],
+            ],
         ],
         [
             'text' => 'change_password',

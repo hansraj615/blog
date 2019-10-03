@@ -19,10 +19,7 @@ class CategoryController extends Controller
     }
     public function getAll()
     {
-        // dd("Asd");
-        // return "hg";
         $category = Category::orderBy('id', 'DESC')->first();
-        // dd($category);
         return $category;
     }
          

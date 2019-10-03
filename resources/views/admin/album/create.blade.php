@@ -103,7 +103,10 @@
                 data:'category='+$(this).val(),
                 success: function(data){
                   if(data.error == true) {
+                    var subcategoryNone = "";
                     toastr.error( data , "Category Dosen't have subcategory please create and subcaregory first" );
+                    subcategoryNone += "<option value=''>Plese Select Category First </option>";
+                    $("#subcategory").html(subcategoryNone).trigger('change.select2');
                     }else{
                       var subcategory = "";
                     $.each(data, function(index, value) {
