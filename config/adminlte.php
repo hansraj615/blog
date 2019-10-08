@@ -165,13 +165,13 @@ return [
         ],
         ['header' => 'Portal Settings'],
         [
-            'text' => 'About',
-            'url'  => 'admin/portal/about',
+            'text' => 'Portal Pages Control',
+            'url'  => 'admin/portal/about/index',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'Manage Role',
-                    'url' => 'admin/portal/about',
+                    'text' => 'About',
+                    'url' => 'admin/portal/about/index',
                     'icon' => 'fas fa-fw fa-user',
                     'label_color' => 'success',
                     'active' => ['admin/portal/about', 'admin/portal/about?*','admin/portal/about*']

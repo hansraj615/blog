@@ -137,7 +137,13 @@
 @endsection
  
 @push('js')
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+      $('#table').DataTable({
+        "pageLength": 5
+      });
+  } );
+    </script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{asset('js/jquery.magnify.js')}}"></script>
@@ -159,13 +165,7 @@ $('[data-magnify]').magnify({
 });
 
 </script>
- <script>
-  
-
-$(document).ready(function() {
-    $('#table').DataTable();
-} );
-</script>
+ 
 <script type="text/javascript">
   function deleteGallery(id) {
    const swalWithBootstrapButtons = Swal.mixin({

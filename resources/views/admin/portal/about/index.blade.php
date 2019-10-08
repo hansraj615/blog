@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Category')
+@section('title', 'About Us')
 @push('css')
 
 @endpush
@@ -8,13 +8,13 @@
  <!-- Content Header (Page header) -->
  <section class="content-header">
     <h1>
-      General Form Elements
+      About You
       <small>Preview</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Forms</a></li>
-      <li class="active">General Elements</li>
+      <li><a href="#">About</a></li>
+      <li class="active">About Form </li>
     </ol>
   </section>
 
@@ -30,13 +30,18 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form">
+          
+           
+          <form action="{{route('about.aboutstore')}}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            @foreach($about as $value)
             <div class="box-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">About</label>
-                <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter About Me" col="4" row="7"></textarea>
+              <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter About Me" name="about" col="4" row="7">{{$value->about}}</textarea>
               </div>
             </div>
+            @endforeach
             <!-- /.box-body -->
 
             <div class="box-footer">
@@ -52,21 +57,27 @@
             <h3 class="box-title">Experiance | Happy Client | Project Clients(Event) </h3>
           </div>
           <div class="box-body">
+            @foreach($about as $value)
             <div class="row">
+                <form method="POST"action="{{route('about.store')}}" enctype="multipart/form-data">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="col-xs-3">
                     <label for="yojexperiance">Years Of Experience</label>
-            <input class="form-control input-sm" type="number" name="yojexperiance" placeholder="Years Of Experience in Number">
+                <input class="form-control input-sm" type="number" name="yojexperiance" value="{{$value->yojexperiance}}" placeholder="Years Of Experience in Number">
                 </div>
                 <div class="col-xs-3">
                     <label for="happyclient">Happy Clients</label>
-            <input class="form-control  input-sm" type="number" name="happyclient" placeholder="Happy Clients in Number">
+                <input class="form-control  input-sm" type="number" name="happyclient" value="{{$value->happyclient}}"placeholder="Happy Clients in Number">
                 </div>
             <div class="col-xs-3">
                 <label for="projectcompleted">Projects Completed</label>
-            <input class="form-control input-sm" type="number" name="projectcompleted" placeholder="Projects Completed in Number">
+            <input class="form-control input-sm" type="number" name="projectcompleted" value="{{$value->projectcompleted}}"placeholder="Projects Completed in Number">
         </div>
-        
+        <div class="col-xs-3">
+            <button type="submit" class="btn btn-success">Submit</button>
+    </div>
         </div>
+        @endforeach
           </div>
           <!-- /.box-body -->
         </div>
@@ -128,7 +139,7 @@
         <div class="box box-info">
           <div class="box-header with-border">
             <h3 class="box-title">About Page Image</h3>
-          </div>{{Auth::id()}}
+          </div> 
           <!-- /.box-header -->
           <!-- form start -->
           <form method="POST"action="{{route('about.userprofileimage',Auth::id())}}" enctype="multipart/form-data">
@@ -136,10 +147,13 @@
             <div class="box-body">
             <label for="image">Image</label>
             <div class="input-group">
+              @foreach($about as $value)
             <div class="custom-file">
             <input type="file" class="custom-file-input" id="image" name="image">
             <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+            <img src="{{URL::asset('storage/uploads/portal/about/thumbnails/'.$value->image)}}" class="img-circle thumbnail" alt="" width="40%">
             </div>
+            @endforeach
                         
                 </div>                                              
             <!-- /.box-body -->

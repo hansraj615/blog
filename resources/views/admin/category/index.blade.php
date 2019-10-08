@@ -19,7 +19,7 @@
             <br>
 
             <!-- /.card-header -->
-            <div class="  card-body table-responsive p-0">
+            <div class="card-body table-responsive p-0">
               <table id="table" class="table table-hover">
                 <thead class="danger">
                 <tr>

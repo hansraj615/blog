@@ -73,8 +73,10 @@ Route::POST('/role/{id}/destroy','RoleController@destroy')->name('role.destroy')
 
 
 Route::group(["prefix" => "admin/portal", "namespace" => "Admin\Portal"], function () {
-    Route::resource('/about','AboutController');
     Route::get('/about','AboutController@index')->name('showAbout');
+    Route::get('/about/index', 'AboutController@adminIndex')->name('about.index');
+    Route::POST('/about/store', 'AboutController@clientCountStore')->name('about.store');
+    Route::POST('/about/aboutstore', 'AboutController@aboutStore')->name('about.aboutstore');
     Route::POST('/about/{id}/update','AboutController@saveUserProfileImage')->name('about.userprofileimage');
     Route::get('/testimonial/index','TestimonialController@index')->name('testimonial.index');
     Route::get('/testimonial/create','TestimonialController@create')->name('testimonial.create');

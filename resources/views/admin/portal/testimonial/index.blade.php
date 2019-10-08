@@ -53,9 +53,9 @@
             <br>
 
             <!-- /.card-header -->
-            <div class="  card-body table-responsive p-0">
-              <table id="table" class="table table-striped table-bordered wrap" style="width:100%">
-                <thead class="danger">
+              <div class="card-body table-responsive p-0">
+                <table id="table" class="table table-hover">
+                  <thead>
                 <tr>
                   <th>No</th>
                   <th>Name</th>
@@ -70,8 +70,7 @@
                 <tbody>
                 @foreach($testimonial as $key =>$value)
                  <tr>
-                    {{-- <td>{{$category->firstItem() + $key}}</td> --}}
-                        <td>{{ $key+1}}</td>
+                  <td>{{ $key+1}}</td>
                         <td>{{$value->name??""}}</td>
                         <td>{{$value->company??""}}</td>
                         <td>{{$value->comment??""}}</td>
@@ -123,7 +122,14 @@
 @endsection
  
 @push('js')
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+ 
+<script>
+  $(document).ready(function() {
+      $('#table').DataTable({
+        "pageLength": 5
+      });
+  } );
+  </script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{asset('js/jquery.magnify.js')}}"></script>
@@ -144,13 +150,6 @@ $('[data-magnify]').magnify({
   title: false
 });
 
-</script>
- <script>
-  
-
-$(document).ready(function() {
-    $('#table').DataTable();
-} );
 </script>
 <script type="text/javascript">
   function deleteTestimonial(id) {
